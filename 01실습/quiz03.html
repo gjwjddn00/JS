@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            1. 사용자에게 키를 실수형으로 입력받습니다.
+            2. 사용자에게 나이를 정수형으로 입력받습니다.
+               키가 140이상이고, 나이가 8세 이상이면 자이로드롭을 탈 수있습니다.
+            3. 둘 중 하나라도 거짓이면 놀이기구를 탈 수 없습니다!
+        */
+
+        let height = prompt("당신의 키는 몇cm 인가요?");
+        let age = prompt("당신의 나이는 몇 살 인가요?");
+        let x = "자이로들롭을 탈 수있습니다";
+
+        if( height >=140 && age >= 8 ) {
+            x = "자 타";
+        } else {
+            x = "자 모 타";
+        }
+
+        document.write(x);
+
+    </script>
+
+</body>
+</html>

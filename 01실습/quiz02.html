@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            1. 사용자에게 바구니의 크키를 입력받습니다
+            2. 그 다음에 사과의 개수를 입력받습니다
+            3. 사과의 개수와, 필요한 바구니의 개수를 출력해주면 됩니다
+            4. ex) 바구니크기 = 10, 사과의 개수가 151개 바구니는 16개 필요합니다
+        */
+
+        // 바구니 한개당 몇개의 사과가 들어가는지
+        let n = prompt(" 바구니에 담을 수 있는 사과의 개수를 설정해주세요");
+        // 총 사과의 개수(고정)
+        let apple = prompt(" 사과의 개수는 몇개인가요?");
+        // 바구니 안의 들어갈 n개으 사과가 총 사과에서 나눠서 x개의 바구니가 생긴다
+        let x = 0;
+
+        x = parseInt(apple / n);
+
+        // 사과 총량에서 바구니에 담을수 있는 사과의 개수를 나눴을때 나머지가 0이나온다면 바구니의 개수는
+        // 참이면 그대로 나오게 하고 아니라면 1을 더해서 바구니의 개수보다 사과 총량이 작을때 0이 나오는것을 방지한다.
+        x = (apple % n) === 0 ? x : x + 1;
+        
+
+        document.write("사과의 총 개수는", apple, "개"
+        , "한 바구니당 넣을 수 있는 사과",n 
+        , "개 가능", "생긴 바구니", x, "개");
+
+        
+
+
+    </script>
+</body>
+</html>
