@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //구구단을 입력받아 구구단을 출력하세요
+        let i = 1;
+        let num = parseInt( prompt("구구단 수를 입력해주세요(1 ~ 9)"));
+        document.write("<h3>", num, "단</h3>"); // h3태그를 사용하여 num(단)을 볼드체 및 줄바꿈하기
+
+        while (i <= 9) {
+            // document.write(num, "x", i, "=", num * i, "<br>");
+            // 빽틱 - ES6
+            document.write(`${num} x ${i} = ${num * i} <br>`); // `` 빽틱을 활용할 수 있다.
+            i++;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            두 수를 입력받아서, 큰 수와 작은 수를 출력해주면 됩니다
+            단 만약 같은 수라면 "같은 수 입니다" 를 출력합니다
+        */
+
+        let x = parseInt( prompt("큰 수를 입력해주세요") );
+        let y = parseInt( prompt("작은 수를 입력해주세요") );
+
+        if (x === y) {
+            document.write("같은 수 입니다.");
+        } else if (x > y) {
+            document.write("큰수는", x, "이고", "작은 수는", y, "입니다");
+        } else if (x < y) {
+            document.write("큰수는", y, "이고", "작은 수는", x, "입니다");
+        }
+
+    </script>
+
+</body>
+</html>
