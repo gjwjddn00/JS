@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사칙연산 게임</title>
+</head>
+<body>
+    <h1>사칙연산 게임</h1>
+    <p>덧셈과 문제를 풀어보세요!</p>
+    
+    <script>
+        /*
+        더하기 문제 맞추기
+        1~100까지 랜덤한 덧셈 문제를 출제합니다.
+        사용자는 정답을 입력합니다.
+        0을 입력하면 프로그램이 종료됩니다.
+        정답횟수, 오답횟수를 화면에 출력해주세요
+        */
+        let okCnt = 0;
+        let noCnt = 0;
+
+        while(true) {
+
+            //반복을 돌때마다 수행할 작업은 반복문 안에서..
+            let n1 = parseInt( Math.random() * 100 ) + 1;
+            let n2 = parseInt( Math.random() * 100 ) + 1;
+   
+            let answer = parseInt( prompt(`${n1} + ${n2} = ?\n[0을 입력하면 종료됩니다]`) );
+            let correct = n1 + n2; //실제 정답
+
+            //0이라면 탈출
+            if(answer === 0) {
+                break;
+            }
+
+            if(answer === correct) { //정답
+                //정답에 대한 개수
+                okCnt++;
+            } else { //오답
+                //오답에 대한 개수
+                noCnt++;
+            }
+        }
+
+        document.write(`정답회수: ${okCnt}, 오답회수: ${noCnt}`);
+
+
+
+
+    </script>
+</body>
+</html>

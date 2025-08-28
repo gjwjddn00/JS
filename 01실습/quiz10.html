@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            어떤수 x를 입력받아서,  x까지의 약수들의 합계를 구합니다.
+            ex)
+            x=12
+            약수 = 1, 2, 3, 4, 6, 12
+            합 = 28
+
+            바깥반복문 - 입력받은 수까지 회전
+            내부반복문 - 해당 수가 약수인지 판별
+        */
+        
+        let x = parseInt(prompt("x를 입력해주세요"));
+        let sum = 0;
+
+        for (let i=1; i <= x; i++) { //입력받은 수까지 회전
+            for(let j=1; j<=1; j++) {
+                if(x % i == 0) {
+                    sum += i;
+                }
+                
+            }
+            document.write("<br>");
+        }
+        document.write(sum);
+        
+        //디버깅 하는 법
+        // debugger; //중단점
+
+    </script>
+</body>
+</html>
