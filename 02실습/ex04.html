@@ -8,26 +8,23 @@
 <body>
     
     <script>
-        // 1단계: 층수 입력 및 2차원 배열 생성
-// TODO: 사용자로부터 층수를 입력받아 2차원 배열을 생성하세요
-// 1. prompt()로 층수를 입력받기
-// 2. 입력받은 층수만큼 2차원 배열 생성
-// 3. 각 층을 빈 배열로 초기화
-// 4. 생성된 배열 구조 출력
+//         // 1단계: 층수 입력 및 2차원 배열 생성
+// // TODO: 사용자로부터 층수를 입력받아 2차원 배열을 생성하세요
+// // 1. prompt()로 층수를 입력받기
+// // 2. 입력받은 층수만큼 2차원 배열 생성
+// // 3. 각 층을 빈 배열로 초기화
+// // 4. 생성된 배열 구조 출력
 
-// 예시:
-// 층수 입력: 3
-// 결과: [[], [], []]
-let floorCount = parseInt(prompt("층수를 입력하세요"));
+// // 예시:
+// // 층수 입력: 3
+// // 결과: [[], [], []]
+// let floorCount = parseInt(prompt("층수를 입력하세요"));
 
-let floor = [];
-let emptyFloor = [];
-let matrix = emptyFloor = [];
-for(let i = 0; i < floorCount; i++) {
-    floor[i] = [];
-    matrix += floor[floorCount];
-}
-console.log(`${floor[matrix]}`);
+// let floor = []; // floor.push([]) 같은 효과
+// for(let i = 0; i < floorCount; i++) {
+//     floor[i] = [];
+// }
+// console.log(floor);
 
 
 
@@ -55,6 +52,39 @@ console.log(`${floor[matrix]}`);
 // 1층: 김철수
 // 2층: 이영희, 홍길동
 // 3층: 비어있음
+
+let floorCount = parseInt(prompt("층수를 입력하세요"));
+
+let building = [];
+for(let i = 0; i < floorCount; i++) {
+    building[i] = [];
+}
+
+while(true) {
+    let floorInput = prompt("층을 입력하세요 (그만 입력 시 종료)");
+    if(floorInput === "그만") break;
+
+    let floorNum = parseInt(floorInput);
+    if(isNaN(floorNum) || floorNum < 1 || floorNum > floorCount) {
+        alert(`1부터 ${floorCount} 사이의 층수를 입력하세요.`);
+        continue;
+    }
+
+    let name = prompt("이름을 입력하세요");
+    if(name === "그만") break;
+
+    building[floorNum - 1].push(name); // 배열 인덱스는 0부터 시작하니까 -1 처리
+}
+
+// 최종 결과 출력
+for(let i = 0; i < floorCount; i++) {
+    if(building[i].length === 0) {
+        console.log(`${i + 1}층: 비어있음`);
+    } else {
+        console.log(`${i + 1}층: ${building[i].join(", ")}`);
+    }
+}
+
     </script>
 
 </body>
