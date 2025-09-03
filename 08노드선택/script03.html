@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>innerHTML vs textContent</h3>
+
+    <button type="button" id="btn">제목바꾸기 버튼</button>
+    <h3 class="title">기본제목</h3>
+
+    <script>
+        let btn = document.getElementById("btn");
+        let title = document.querySelector(".title");
+        btn.addEventListener("click", function() {
+            title.textContent = "<b>b태그가 태그로 인식되나요</b>"; // 문자열이 태그로 인식됩니다.
+            
+        })
+
+    </script>
+</body>
+</html>
