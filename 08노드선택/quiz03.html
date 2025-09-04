@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input {
+            outline:none;
+        }
+    </style>
+
+</head>
+<body>
+    아이디 <input type="box" class="box1">
+    <div id="msg1"></div>
+    비밀번호 <input type="box" class="box2">
+    <div id="msg2"></div>
+
+    <script>
+        let msg1 = document.getElementById("msg1");
+        let msg2 = document.getElementById("msg2");
+        let box1 = document.querySelector(".box1");
+        let box2 = document.querySelector(".box2");
+
+        box1.addEventListener("input", () => {
+            if(box1.value.length <= 3){
+                msg1.innerHTML = "4글자 이상 입력해주세요";
+                box1.style.border = "3px solid red";
+            } else {
+                box1.style.border = "3px solid green";
+                msg1.innerHTML = null;
+            }
+        });
+
+        box2.addEventListener("input", () => {
+            if(box2.value.length <= 8){
+                msg2.innerHTML = "9글자 이상 입력해주세요";
+                box2.style.border = "3px solid red";
+            } else {
+                box2.style.border = "3px solid green";
+                msg2.innerHTML = null;
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
