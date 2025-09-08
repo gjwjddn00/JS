@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li, ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="box">
+        <li><img src="img/1.jpg" alt="1" width="100" class="item"></li>
+        <li><img src="img/2.jpg" alt="2" width="100" class="item"></li>
+        <li><img src="img/3.jpg" alt="3" width="100" class="item"></li>
+        <li><img src="img/4.jpg" alt="4" width="100" class="item"></li>
+    </ul>
+
+    <div>
+        <p>결과 :</p>
+        <div><img src="img/1.jpg" alt="1" width="100" class="alone"></div>
+    </div>
+
+    <script>
+        let box = document.querySelector(".box");
+        let alone = document.querySelector(".alone");
+
+        box.onclick = function(e) {
+
+            if(e.target.tagName !== "IMG") {
+                return;
+            }
+            alone.src = e.target.src;
+            
+            
+        }
+    </script>
+</body>
+</html>
